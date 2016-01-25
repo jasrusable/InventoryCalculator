@@ -6,9 +6,10 @@ Created on 24 Jan 2016
 import csv
 
 from iFixList import IFixList
+from salesAddBehaviour import SalesAddBehavior
 
 
-class SalesProduct(IFixList):
+class SalesProductList(IFixList):
     '''
     classdocs
     '''
@@ -19,8 +20,9 @@ class SalesProduct(IFixList):
         self.idQ="Quantity"
         self.idCost="UnitCost"
         self.idPrice="UnitPrice"
+        self.addStyle=SalesAddBehavior()
 
-            
+
 
 
 

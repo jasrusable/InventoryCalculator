@@ -4,9 +4,10 @@ Created on 24 Jan 2016
 @author: craig
 '''
 from iFixList import IFixList
+from addBehavior import AddBehavior
 
 
-class OrdersList(IFixList):
+class OrdersList(IFixList,AddBehavior):
     '''
     classdocs
     '''
@@ -16,3 +17,4 @@ class OrdersList(IFixList):
         self.idQ="Quantity"
         self.idCost="UnitCost"
         self.idPrice="UnitPrice"
+        self.addStyle=AddBehavior()

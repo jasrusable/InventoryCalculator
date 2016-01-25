@@ -1,19 +1,30 @@
 
-from salesProductList import SalesProduct
+import pytest
+
+from ordersList import OrdersList
 from product import Product
+from salesProductList import SalesProductList
+from storeInventory import StoreInventory
 
 
 class TestSales:
-    def test_one(self):
-        x = "this"
-        assert 'h' in x
+    def test_assertions(self):
+        inv=StoreInventory()
+        sales=SalesProductList()
+        orders=OrdersList()
+        with pytest.raises(AssertionError):
+            assert inv.addOrders(sales) 
+        with pytest.raises(AssertionError):
+            assert inv.addSales(orders) 
 
-    def test_readAndSum(self):
+        
+class TestOrders:
+    def test_assertions(self):
+        inv=StoreInventory()
+        sales=SalesProductList()
+        orders=OrdersList()
+        with pytest.raises(AssertionError):
+            assert inv.addOrders(sales) 
+        with pytest.raises(AssertionError):
+            assert inv.addSales(orders) 
 
-        sold=SalesProduct()
-        sold.addProducts("./csvs/stock-sales_TEST.csv")
-        expected = Product()
-        expected.addItem(-10, (92.0*7-100), 299)
-        assert int(sold['3346'].cost) == expected.cost
-        assert int(sold['3346'].count) == expected.count
-        assert int(sold['3346'].retail) == expected.retail

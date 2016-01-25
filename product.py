@@ -3,6 +3,7 @@ Created on 24 Jan 2016
 
 @author: Craig
 '''
+from addBehavior import AddBehavior
 
 
 class Product(object):
@@ -13,13 +14,10 @@ class Product(object):
 
     def __init__(self ):
         self.count= 0
-        self.cost=  0
+        self.totalCost=  0
         self.retail=0
-    
-    def addItem(self,count,cost,retail):
-
-        self.count+=count
-        self.cost+= cost
-        self.retail=retail #retail is not weighted only updated
+        self.addStyle=AddBehavior()
         
-        return self
+    #setting the behavior for addition, mostly used for quick product creation in testing
+    def setAddStyle(self,_addBehavior):
+        self.addStyle=_addBehavior
